@@ -2,7 +2,8 @@ import React from 'react'
 import { Button } from './ui/button'
 import { AnimatedShinyText } from './ui/animated-shiny-text'
 import { cn } from '@/lib/utils'
-import { ArrowRightIcon } from 'lucide-react'
+import { ArrowRight, ArrowRightIcon } from 'lucide-react'
+import Link from 'next/link'
 
 function HeroSection() {
     return (
@@ -27,8 +28,15 @@ function HeroSection() {
             </div>
 
             <div className='flex gap-4'>
-                <Button className='bg-blue-500 hover:bg-blue-400 rounded-full cursor-pointer text-white'>Get Started</Button>
-                <Button className='border border-black rounded-full hover:bg-gray-200 cursor-pointer text-black' variant={'outline'}>Learn More</Button>
+                <Link href="/interview">
+                <Button className='bg-blue-500 hover:bg-blue-400 rounded-full cursor-pointer text-white'>
+                        Get Started
+                        <ArrowRight className='flex items-center justify-center h-4 w-4' />
+                    </Button>
+                </Link>
+                <Link href="/learn-more">
+                    <Button className='border border-black rounded-full hover:bg-gray-200 cursor-pointer text-black' variant={'outline'}>Learn More</Button>
+                </Link>
             </div>
         </div>
     )
